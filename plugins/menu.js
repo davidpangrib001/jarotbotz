@@ -28,11 +28,11 @@ const defaultMenu = {
 ║│➸${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 ╰─────────❉
 %readmore`.trimStart(),
-  header: '*║╭──❉ 〔%category〕*',
-  body: '║│➸%cmd %islimit %isPremium',
-  footer: '*╰───❉*\n',
+  header: '┏━━〔 %category 〕━ꕥ',
+  body: '┃✾ %cmd %islimit %isPremium',
+  footer: '┗━ꕥ\n',
   after: `
-  ⬣━〔Powered By 𝐉𝐚𝐫𝐨𝐭𝐭〕━⬣
+  ⬣━〔𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝚋𝚢 *𝙹𝚊𝚛𝚘𝚝𝚝* 〕━⬣
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
@@ -224,20 +224,19 @@ let uptime = clockString(_uptime)
 			return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
                         "title": `*${ucapan()}, ${name}*`.trim(),
-                        "description": `╭═══════════════════════
-║╭──❉ 〔 ⳹ ❋ཻུ۪۪𝐁𝐎𝐓 𝐉𝐀𝐑𝐎𝐓⳹ ❋ཻུ۪۪ 〕 ❉────── 
-║│➸⏰Aktif selama ${uptime}
-║│➸⚡Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-║│➸ Nama bot: *𝐁𝐎𝐓𝐓 𝐉𝐑*
-║│➸ *${conn.blocklist.length}* Terblock
-║│➸ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-║│➸ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
-╰─────────❉
+                        "description": `┏──『 ⳹ ❋ཻུ۪۪𝐁𝐎𝐓 𝐉𝐀𝐑𝐎𝐓⳹ ❋ཻུ۪۪ 』──⬣
+│⬡ ⏰ 𝖠𝗄𝗍𝗂𝖿 𝖲𝖾𝗅𝖺𝗆𝖺 *${uptime}*
+│⬡ ⚡ 𝖡𝖺𝗍𝖾𝗋𝖺𝗂 ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'} 
+│⬡ 🤖 𝖭𝖺𝗆𝖺 𝖡𝗈𝗍: *𝐁𝐎𝐓𝐓 𝐉𝐑*
+│⬡ 🚧 *${conn.blocklist.length}* 𝖳𝖾𝗋𝖻𝗅𝗈𝖼𝗄 
+│⬡ ⛔ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* 𝖢𝗁𝖺𝗍 𝖳𝖾𝗋𝖻𝖺𝗇𝗇𝖾𝖽
+│⬡ ⛔ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* 𝖯𝖾𝗇𝗀𝗀𝗎𝗇𝖺 𝖳𝖾𝗋𝖻𝖺𝗇𝗇𝖾𝖽
+┗──────────⬣
 _____••••••••• 
-⬣━〔Powered By 𝐉𝐀𝐑𝐎𝐓〕━⬣
+⌕ Powered By JAROT
 ▌│█║▌║▌║║▌║▌║█│▌ `.trim(),
-                        "footerText": "*group offc bot https://chat.whatsapp.com/E5l0ofPuMxG3H8ZhMRyI7e*",
-                        "buttonText": "««TAMPILAN MENU««",
+                        "footerText": "*Join Ke Grup Official Bot*\nhttps://chat.whatsapp.com/E5l0ofPuMxG3H8ZhMRyI7e",
+                        "buttonText": "› LIST MENU",
                         "listType": "SINGLE_SELECT",
                         "sections": [
                             {
@@ -558,16 +557,16 @@ function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
   res = "udah malam tidur gih •>•"
   if (time >= 4) {
-    res = "Selamat pagi hari kak 🌅"
+    res = "Selamat pagi 🌅"
   }
   if (time > 10) {
-    res = "Selamat siang hari kak 🏜️"
+    res = "Selamat siang 🏜️"
   }
   if (time >= 15) {
-    res = "Selamat sore hari kak 🌄"
+    res = "Selamat sore 🌄"
   }
   if (time >= 18) {
-    res = "Selamat malam hari kak 🌌"
+    res = "Selamat malam 🌌"
   }
   return res
 }
